@@ -7,7 +7,6 @@ from database import (
     get_user_by_id,
     insert_user,
     update_user,
-    patch_user,
     delete_user
 )
 
@@ -36,12 +35,6 @@ def api_add_user():
 def api_update_user():
     user = request.get_json()
     return jsonify(update_user(user))
-
-
-@app.route("/api/users/<user_id>", methods=["PATCH"])
-def api_patch_user(user_id):
-    data = request.get_json()
-    return jsonify(patch_user(user_id, data))
 
 
 @app.route("/api/users/delete/<user_id>", methods=["DELETE"])
