@@ -1,0 +1,4 @@
+name: Flask environment
+values:
+  - key: base_url
+    value: ''
